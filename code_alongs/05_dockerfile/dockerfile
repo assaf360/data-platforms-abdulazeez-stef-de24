@@ -1,0 +1,14 @@
+# Välj en basbild, till exempel Python 3.12
+FROM python:3.13
+
+# Kopiera alla filer till /app i containern
+COPY . /app
+
+# Ange arbetskatalogen för alla efterföljande kommandon
+WORKDIR /app
+
+# Installera eventuella beroenden från requirements.txt
+RUN pip install -r requirements.txt
+
+# Ange standardkommando som ska köras när containern startar
+CMD ["python", "main.py"]
